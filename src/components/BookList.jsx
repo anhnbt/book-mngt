@@ -68,7 +68,9 @@ export default function BookList() {
     return formatted;
   };
 
-  const handleEdit = () => {};
+  const handleEdit = (id) => {
+    navigate(`/books/edit/${id}`);
+  };
 
   const handleView = (id) => {
     navigate(`/books/${id}`);
@@ -155,7 +157,7 @@ export default function BookList() {
                 </td>
                 <td>{item.category.name}</td>
                 <td>{formatDate(item.createdAt)}</td>
-                <td>
+                <td className="d-flex gap-1">
                   <button
                     className="btn btn-info"
                     onClick={() => handleView(item.id)}
